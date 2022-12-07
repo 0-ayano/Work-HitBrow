@@ -49,6 +49,11 @@ function judge(ans){
     var brow = 0
     var char  =''
 
+    if (txt.value == ""){
+        ans_num = 4
+        txt.value = String(ans[0]) + String(ans[1]) + String(ans[2]) + String(ans[3])
+    }
+
     while(ans_num <= 3){
         txt_num = 0
         while(txt_num <= 3){
@@ -64,18 +69,30 @@ function judge(ans){
         ans_num = ans_num + 1
     }
 
+    addElement(txt.value, hit, brow)
+
     if (hit == 4){
         alert("全てHITしました\nNew Game Start!")
         txt.value = "" 
         location.reload()
     }
-
     else {
-        char = txt.value + "\nHit：" + String(hit) + "　　brow：" + String(brow)
-        alert( char )
         txt.value = "" 
     }
     
+}
+
+function addElement(num, hit, brow){
+    var table = document.getElementById('history');
+    var row = table.insertRow(1);
+    var cells = new Array();
+
+    cells[0] = row.insertCell(-1);
+    cells[0].innerText = num;
+    cells[1] = row.insertCell(-1);
+    cells[1].innerText = hit;
+    cells[2] = row.insertCell(-1);
+    cells[2].innerText = brow;
 }
 
 

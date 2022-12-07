@@ -1,5 +1,206 @@
-h1{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+h1 {
+    color: #727070;
+    padding: 0.5em;
+    display: inline-block;
+    line-height: 1.3;
+    background: #dbebf8;
+    vertical-align: middle;
+    border-radius: 25px 0px 0px 25px;
+}
+
+h1:before {
+    content: '●';
+    color: white;
+    margin-right: 8px;
+}
+
+table.key {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+table.key td {
+    padding: 10px 10px 10px 10px;
+}
+
+input {
+    width: 80px;
+    height: 80px;
+    font-size: 200%;
+    background-color: #dcdcdca4;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+input:hover {
+    background: #747373b9;
+}
+
+input:active {
+    background: #5a5a5a;
+  }
+
+.center {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.panel {
+    position: absolute;
+    top: 20%;
+    left: 8%;
+    width: 40%;
+    height: 60%;
+}
+
+.display {
+    position: absolute;
+    width: 60%;
+    height: 20%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center;
+    font-size: 300%;
+    background: #ffffff;
+    border-top: solid #dcdcdca4 6px;
+    border-bottom: solid #dcdcdca4 6px;
+    border-right: solid #dcdcdca4 6px;
+    border-left: solid #dcdcdca4 6px;
+    border-radius: 5px;
+}
+
+.display:hover {
+    background: #ffffff; /*ディスプレイ部分は無効化*/
+}
+
+.operator {
+    background-color: #dbebf8;
+}
+
+.operator:hover {
+    background: #86b4dd;
+}
+
+.operator:active {
+    background: #86b4dd;
+}
+
+.sideView {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 40%;
+    height: 70%;
+    border: 2px solid #000000;
+    border: 8px #dbebf8 solid;
+    overflow: hidden scroll;
+}
+
+sideView::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+sideView::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: #FFF;
+}
+
+sideView::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #F08A5D;
+}
+
+table.history {
+    position: relative;
+    top: 13%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    padding: 0;
+    table-layout: fixed;
+    color: #000;
+    width: 90%;
+    text-align: center;
+}
+  
+table.history tr {
+    background-color: #fff;
+    padding: .35em;
+    border-bottom: 1px solid #bbb;
+}
+  
+table.history th,
+table.history td {
+    padding: 1em 10px 1em 1em;
+    border-right: 1px solid #bbb;
+}
+
+table.history th:last-child, 
+table.history td:last-child{
+      border: none;
+}
+  
+.Top {
+      color: #F08A5D;
+      border-bottom: 5px solid #F08A5D;
+}
+
+@media screen and (max-width: 600px) {
+    table.history {
+      border: 0;
+      width:100%
+    }
+
+    table.history th{
+      display: block;
+      border-right: none;
+      border-bottom: 5px solid #F08A5D;
+      padding-bottom: .6em;
+      margin-bottom: .6em;
+  
+    }
+
+    table.history thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table.history tr {
+      display: block;
+      margin-bottom: 2em;
+    }
+    
+    table.history td {
+      border-bottom: 1px solid #bbb;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+      position: relative;
+      padding: .625em .625em .625em 4em;
+      border-right: none;
+    }
+    
+    table.history td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      position: absolute;
+      left: 10px;
+    }
+    
+    table.history td:last-child {
+      border-bottom: 0;
+    }
 }
